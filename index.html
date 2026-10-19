@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Parfaites Editions | Maison d'édition</title>
+
+<meta name="description" content="Parfaites Editions, maison d'édition dédiée aux idées, au savoir, à la littérature et à la pensée. Découvrez nos ouvrages et nos projets éditoriaux.">
+
+<meta name="theme-color" content="#102c26">
+
+<style>
+:root {
+  --green: #102c26;
+  --green-light: #21483d;
+  --gold: #c9a45c;
+  --cream: #f8f6f0;
+  --white: #ffffff;
+  --text: #28332f;
+  --muted: #69736d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--text);
+  background: var(--cream);
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: min(1120px, 90%);
+  margin: auto;
+}
+
+header {
+  background: var(--green);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 2px solid var(--gold);
+}
+
+.navbar {
+  min-height: 78px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: var(--gold);
+}
+
+.logo small {
+  display: block;
+  font-size: 10px;
+  color: white;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+}
+
+nav {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+
+nav a {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  transition: color .2s;
+}
+
+nav a:hover {
+  color: var(--gold);
+}
+
+.menu-button {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: white;
+  font-size: 23px;
+  padding: 3px 10px;
+  cursor: pointer;
+}
+
+.hero {
+  background:
+    linear-gradient(110deg, rgba(16,44,38,.97), rgba(16,44,38,.85)),
+    var(--green);
+  color: white;
+  padding: 100px 0 105px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "P";
+  position: absolute;
+  font-size: 380px;
+  line-height: 1;
+  color: rgba(255,255,255,.035);
+  right: 3%;
+  top: -60px;
+  font-weight: bold;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  color: var(--gold);
+  letter-spacing: 4px;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 7vw, 70px);
+  line-height: 1.15;
+  max-width: 850px;
+  margin: auto auto 24px;
+  position: relative;
+}
+
+.hero h1 span {
+  color: var(--gold);
+}
+
+.hero p {
+  max-width: 650px;
+  margin: auto;
+  font-size: 18px;
+  color: #e2e9e4;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 35px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 24px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  border: 1px solid var(--gold);
+  transition: .2s;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--green);
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background: white;
+  border-color: white;
+}
+
+.btn-outline {
+  color: white;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: var(--green);
+}
+
+section {
+  padding: 85px 0;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-heading .eyebrow {
+  margin-bottom: 10px;
+}
+
+.section-heading h2 {
+  font-size: clamp(30px, 5vw, 43px);
+  color: var(--green);
+  line-height: 1.25;
+}
+
+.section-heading p {
+  max-width: 650px;
+  margin: 15px auto 0;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.about-panel {
+  background: var(--green);
+  color: white;
+  padding: 42px;
+  border-bottom: 5px solid var(--gold);
+}
+
+.about-panel .big-letter {
+  font-size: 90px;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.about-panel h3 {
+  font-size: 26px;
+  margin: 15px 0;
+}
+
+.about-panel p {
+  color: #e0e8e3;
+}
+
+.about-text h2 {
+  font-size: 36px;
+  color: var(--green);
+  margin-bottom: 20px;
+  line-height: 1.25;
+}
+
+.about-text p {
+  margin-bottom: 17px;
+}
+
+.gold-line {
+  width: 70px;
+  height: 3px;
+  background: var(--gold);
+  margin: 20px 0;
+}
+
+.books-section {
+  background: #eeece4;
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  max-width: 850px;
+  margin: auto;
+}
+
+.book-card {
+  background: white;
+  padding: 25px;
+  border: 1px solid #e4dfd2;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(16,44,38,.09);
+}
+
+.book-cover {
+  min-height: 250px;
+  background: var(--green);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  border: 5px double var(--gold);
+  outline: 1px solid var(--green);
+  outline-offset: -12px;
+  margin-bottom: 25px;
+}
+
+.book-cover .cover-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--gold);
+  margin-bottom: 25px;
+}
+
+.book-cover h3 {
+  font-size: 25px;
+  line-height: 1.3;
+}
+
+.book-cover .cover-bottom {
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-top: 28px;
+  color: var(--gold);
+}
+
+.book-card h3 {
+  font-size: 23px;
+  color: var(--green);
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+.book-card p {
+  color: var(--muted);
+  margin-bottom: 17px;
+  font-size: 15px;
+}
+
+.book-status {
+  display: inline-block;
+  padding: 5px 12px;
+  background: #e6efe8;
+  color: var(--green);
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.value-card {
+  padding: 30px;
+  border-top: 3px solid var(--gold);
+  background: white;
+}
+
+.value-card .number {
+  font-size: 35px;
+  color: var(--gold);
+}
+
+.value-card h3 {
+  color: var(--green);
+  font-size: 23px;
+  margin: 10px 0;
+}
+
+.value-card p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.authors-section {
+  background: var(--green);
+  color: white;
+  text-align: center;
+}
+
+.authors-section .section-heading h2 {
+  color: white;
+}
+
+.authors-section .section-heading p {
+  color: #d9e3dc;
+}
+
+.authors-box {
+  max-width: 760px;
+  margin: auto;
+  border: 1px solid rgba(201,164,92,.6);
+  padding: 45px 30px;
+}
+
+.authors-box h3 {
+  font-size: 29px;
+  color: var(--gold);
+  margin-bottom: 15px;
+}
+
+.authors-box p {
+  color: #e2e9e4;
+  margin-bottom: 20px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.contact-info h3 {
+  font-size: 29px;
+  color: var(--green);
+  margin-bottom: 18px;
+}
+
+.contact-info p {
+  margin-bottom: 17px;
+  color: var(--muted);
+}
+
+.contact-item {
+  padding: 15px 0;
+  border-bottom: 1px solid #e0ddd3;
+}
+
+.contact-item strong {
+  display: block;
+  color: var(--green);
+  margin-bottom: 4px;
+}
+
+.contact-item a {
+  color: #785c22;
+  overflow-wrap: anywhere;
+}
+
+.contact-note {
+  background: white;
+  padding: 30px;
+  border-left: 4px solid var(--gold);
+}
+
+.contact-note h3 {
+  color: var(--green);
+  font-size: 23px;
+  margin-bottom: 15px;
+}
+
+.contact-note p {
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+footer {
+  background: #0b211c;
+  color: white;
+  padding: 35px 0;
+  text-align: center;
+}
+
+footer .footer-logo {
+  color: var(--gold);
+  font-size: 23px;
+  margin-bottom: 8px;
+}
+
+footer p {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  color: #c5d0c8;
+  margin-top: 8px;
+}
+
+footer a {
+  color: var(--gold);
+}
+
+@media (max-width: 760px) {
+  .navbar {
+    min-height: 70px;
+  }
+
+  .logo {
+    font-size: 19px;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 70px;
+    background: var(--green);
+    padding: 20px 5%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  .hero {
+    padding: 75px 0;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  section {
+    padding: 60px 0;
+  }
+
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-panel {
+    padding: 30px;
+  }
+
+  .books-grid,
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .book-cover {
+    min-height: 230px;
+  }
+
+  .authors-box {
+    padding: 30px 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container navbar">
+    <a href="#accueil" class="logo">
+      PARFAITES EDITIONS
+      <small>Maison d'édition</small>
+    </a>
+
+    <button class="menu-button"
+      aria-label="Ouvrir le menu"
+      aria-expanded="false"
+      onclick="toggleMenu()">☰</button>
+
+    <nav id="navigation">
+      <a href="#accueil" onclick="closeMenu()">Accueil</a>
+      <a href="#maison" onclick="closeMenu()">Notre maison</a>
+      <a href="#livres" onclick="closeMenu()">Nos livres</a>
+      <a href="#auteurs" onclick="closeMenu()">Auteurs</a>
+      <a href="#contact" onclick="closeMenu()">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="accueil">
+  <div class="container">
+    <div class="eyebrow">Le savoir · La pensée · La littérature</div>
+
+    <h1>Des idées aujourd'hui,<br>
+      <span>un meilleur demain.</span>
+    </h1>
+
+    <p>
+      Bienvenue chez Parfaites Editions, une maison d'édition
+      consacrée à la transmission du savoir, à la réflexion
+      intellectuelle et à la découverte de nouvelles idées.
+    </p>
+
+    <div class="buttons">
+      <a href="#livres" class="btn btn-primary">Découvrir nos livres</a>
+      <a href="#maison" class="btn btn-outline">Notre maison d'édition</a>
+    </div>
+  </div>
+</section>
+
+<section id="maison">
+  <div class="container about-grid">
+
+    <div class="about-panel">
+      <div class="big-letter">P</div>
+      <h3>La passion des idées</h3>
+      <div class="gold-line"></div>
+      <p>
+        Un engagement pour les livres, la connaissance,
+        la culture et le dialogue entre les idées.
+      </p>
+    </div>
+
+    <div class="about-text">
+      <div class="eyebrow">Qui sommes-nous ?</div>
+      <h2>Une maison d'édition tournée vers le savoir</h2>
+
+      <p>
+        Parfaites Editions est une maison d'édition indépendante
+        qui souhaite donner une place aux idées, aux œuvres
+        intellectuelles et aux voix qui enrichissent notre
+        compréhension du monde.
+      </p>
+
+      <p>
+        Notre ambition est de proposer des ouvrages qui invitent
+        à réfléchir, à apprendre et à découvrir de nouvelles
+        perspectives, notamment dans les domaines du droit,
+        de la société, de la philosophie et de la littérature.
+      </p>
+
+      <p>
+        Nous croyons que le livre demeure un instrument essentiel
+        de transmission, de liberté intellectuelle et de progrès.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="books-section" id="livres">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">Notre catalogue</div>
+      <h2>Les livres et les idées</h2>
+      <p>
+        Découvrez les ouvrages de Parfaites Editions et
+        les projets qui témoignent de notre engagement
+        en faveur de la réflexion et de la connaissance.
+      </p>
+    </div>
+
+    <div class="books-grid">
+
+      <article class="book-card">
+        <div class="book-cover">
+          <div class="cover-label">Parfaites Editions</div>
+          <h3>Du droit naturel à la concession</h3>
+          <div class="cover-bottom">COLLECTION UNIVERSITAIRE</div>
+        </div>
+
+        <h3>Du droit naturel à la concession</h3>
+
+        <p>
+          Un ouvrage consacré à la réflexion juridique
+          et aux fondements de la pensée du droit.
+          Une contribution à la compréhension des idées
+          qui façonnent les institutions et la société.
+        </p>
+
+        <span class="book-status">Ouvrage publié</span>
+      </article>
+
+      <article class="book-card">
+        <div class="book-cover">
+          <div class="cover-label">Parfaites Editions</div>
+          <h3>Généalogie du droit et de la société</h3>
+          <div class="cover-bottom">DROIT · SOCIÉTÉ · PENSÉE</div>
+        </div>
+
+        <h3>Généalogie du droit et de la société</h3>
+
+        <p>
+          Un projet éditorial qui explore les liens entre
+          l'évolution du droit, les structures sociales
+          et la formation des institutions.
+        </p>
+
+        <span class="book-status">Projet éditorial</span>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="engagements">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">Notre engagement</div>
+      <h2>Les valeurs qui nous guident</h2>
+      <p>
+        Des principes simples au service de la qualité
+        éditoriale et de la diffusion des connaissances.
+      </p>
+    </div>
+
+    <div class="values-grid">
+
+      <article class="value-card">
+        <div class="number">01</div>
+        <h3>Le savoir</h3>
+        <p>
+          Favoriser l'accès aux idées, à la connaissance
+          et à la réflexion intellectuelle.
+        </p>
+      </article>
+
+      <article class="value-card">
+        <div class="number">02</div>
+        <h3>La qualité</h3>
+        <p>
+          Accorder une attention particulière au contenu,
+          à la clarté et à la valeur des ouvrages publiés.
+        </p>
+      </article>
+
+      <article class="value-card">
+        <div class="number">03</div>
+        <h3>La transmission</h3>
+        <p>
+          Faire circuler les idées et contribuer au dialogue
+          entre les auteurs, les lecteurs et les cultures.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="authors-section" id="auteurs">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">Espace auteurs</div>
+      <h2>Vous avez un manuscrit ?</h2>
+      <p>
+        Vous êtes auteur, chercheur ou passionné de littérature ?
+        Vous souhaitez nous présenter un projet de livre ?
+      </p>
+    </div>
+
+    <div class="authors-box">
+      <h3>Faisons connaître vos idées</h3>
+
+      <p>
+        Parfaites Editions est ouverte aux échanges avec
+        les auteurs qui souhaitent présenter leurs projets
+        éditoriaux. Envoyez-nous une présentation de votre
+        manuscrit et quelques informations sur votre projet.
+      </p>
+
+      <a class="btn btn-primary"
+         href="mailto:parfaiteseditions@gmail.com?subject=Proposition%20de%20manuscrit">
+        Présenter mon projet
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">Restons en contact</div>
+      <h2>Contactez notre maison d'édition</h2>
+      <p>
+        Une question, une proposition éditoriale
+        ou une demande d'information ?
+        Nous serons heureux de recevoir votre message.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="contact-info">
+        <h3>Nos coordonnées</h3>
+
+        <p>
+          Pour toute question concernant nos ouvrages,
+          nos activités éditoriales ou les projets d'auteurs,
+          vous pouvez nous contacter par courrier électronique.
+        </p>
+
+        <div class="contact-item">
+          <strong>Maison d'édition</strong>
+          Parfaites Editions
+        </div>
+
+        <div class="contact-item">
+          <strong>Adresse électronique</strong>
+          <a href="mailto:parfaiteseditions@gmail.com">
+            parfaiteseditions@gmail.com
+          </a>
+        </div>
+
+        <div class="contact-item">
+          <strong>Site internet</strong>
+          <a href="https://parfaiteseditions.com">
+            parfaiteseditions.com
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-note">
+        <h3>Écrivons la suite ensemble</h3>
+
+        <p>
+          Les livres ouvrent des horizons, transmettent
+          des connaissances et font naître de nouvelles idées.
+          Nous croyons au pouvoir de l'édition pour rapprocher
+          les auteurs et les lecteurs.
+        </p>
+
+        <p>
+          Pour toute demande, cliquez ci-dessous afin
+          de nous envoyer un courrier électronique.
+        </p>
+
+        <a class="btn btn-primary"
+           href="mailto:parfaiteseditions@gmail.com?subject=Contact%20Parfaites%20Editions">
+          Nous écrire
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-logo">PARFAITES EDITIONS</div>
+
+    <p>Des idées aujourd'hui, un meilleur demain.</p>
+
+    <p>
+      © <span id="year"></span> Parfaites Editions.
+      Tous droits réservés.
+    </p>
+
+    <p>
+      <a href="mailto:parfaiteseditions@gmail.com">
+        Nous contacter
+      </a>
+    </p>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  const nav = document.getElementById("navigation");
+  const button = document.querySelector(".menu-button");
+  const isOpen = nav.classList.toggle("open");
+
+  button.setAttribute("aria-expanded", String(isOpen));
+  button.textContent = isOpen ? "✕" : "☰";
+}
+
+function closeMenu() {
+  const nav = document.getElementById("navigation");
+  const button = document.querySelector(".menu-button");
+
+  nav.classList.remove("open");
+  button.setAttribute("aria-expanded", "false");
+  button.textContent = "☰";
+}
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+  </html>
